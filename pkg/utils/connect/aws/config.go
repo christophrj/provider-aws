@@ -32,7 +32,7 @@ import (
 	stscredstypesv2 "github.com/aws/aws-sdk-go-v2/service/sts/types"
 	awsv1 "github.com/aws/aws-sdk-go/aws"
 	credentialsv1 "github.com/aws/aws-sdk-go/aws/credentials"
-	defaultsV1 "github.com/aws/aws-sdk-go/aws/defaults"
+	defaultsv1 "github.com/aws/aws-sdk-go/aws/defaults"
 	endpointsv1 "github.com/aws/aws-sdk-go/aws/endpoints"
 	requestv1 "github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -673,7 +673,7 @@ func GetDefaultConfigV1() (*awsv1.Config, error) {
 	defer muV1.Unlock()
 	if defaultConfigV1 == nil {
 		// use the sdk's default config
-		defaultConfigV1 = defaultsV1.Get().Config
+		defaultConfigV1 = defaultsv1.Get().Config
 	}
 	return defaultConfigV1.Copy(), nil
 }
